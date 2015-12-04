@@ -2,6 +2,14 @@ Login = React.createClass({
     login:function(){
         var name = this.refs.form.userName.value,
             password = this.refs.form.userPassword.value;
+        WB.login({username:name, password:password}, function(result){
+            WB.dialog_show(result.message);
+            if (result.success){
+                FlowRouter.go('list');
+            }else{
+
+            }
+        });
     },
     register:function(){
         FlowRouter.go('register');

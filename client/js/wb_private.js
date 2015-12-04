@@ -28,5 +28,25 @@ WB = {
             }
             callback(data);
         });
+    },
+    login:function(parmers, callback){
+        var data = {};
+        if (!parmers.username){
+            this.dialog_show("姓名不能为空");
+            return;
+        }else if (!parmers.password){
+            this.dialog_show("密码不能为空");
+            return;
+        }
+        Meteor.loginWithPassword(parmers.username, parmers.password, function(error){
+            if (error && error.reason == "User not found"){
+                data = {message:"用户不存在", success:false};
+            }else if (error && error.reason == "Incorrect password"){
+                data = {message:"密码错误", success:false};
+            }else{
+                data = {success:true, message:"登陆成功"};
+            }
+            callback(data);
+        });
     }
 };

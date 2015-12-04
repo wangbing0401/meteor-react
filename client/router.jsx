@@ -32,3 +32,12 @@ FlowRouter.route("/login", {
         });
     }
 });
+
+adminRoutes.route("/list", {
+    name: 'list',
+    action: function(){
+        ReactLayout.render(App, {
+            content: <List />
+        });
+    }
+})
