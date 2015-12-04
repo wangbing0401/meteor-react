@@ -2,10 +2,6 @@ Login = React.createClass({
     login:function(){
         var name = this.refs.form.userName.value,
             password = this.refs.form.userPassword.value;
-        console.log(Meteor.user());
-        Accounts.createUser({username:name, password:password}, function(error, result){
-            console.log(Meteor.user());
-        });
     },
     register:function(){
         FlowRouter.go('register');

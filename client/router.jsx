@@ -2,7 +2,9 @@ var adminRoutes = FlowRouter.group({
     //prefix: '/admin',
     name: 'admin',
     triggersEnter: [function(context, redirect) {
-        console.log('running group triggers');
+        if (!Meteor.user()){
+            FlowRouter.go('login');
+        }
     }]
 });
 
@@ -14,7 +16,7 @@ adminRoutes.route("/", {
         });
     }
 });
-adminRoutes.route("/register", {
+FlowRouter.route("/register", {
     name: 'register',
     action:function(){
         ReactLayout.render(App, {
@@ -22,7 +24,8 @@ adminRoutes.route("/register", {
         });
     }
 });
-adminRoutes.route("/login", {
+FlowRouter.route("/login", {
+    name: 'login',
     action: function(){
         ReactLayout.render(App, {
             content: <Login />

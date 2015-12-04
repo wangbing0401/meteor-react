@@ -1,7 +1,6 @@
 App = React.createClass({
     // This mixin makes the getMeteorData method work
-
-    render() {
+    render:function() {
         return (
             <div>
                 <nav>
@@ -17,3 +16,6 @@ App = React.createClass({
         );
     }
 });
+function dialog_show(dia_content) {
+
+}
