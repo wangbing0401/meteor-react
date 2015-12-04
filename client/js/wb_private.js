@@ -11,16 +11,16 @@ WB = {
             d.close().remove();
         }, 1000);
     },
-    createUser: function (name, password, callback){
+    createUser: function (parmers, callback){
         var data = {};
-        if (!name){
+        if (!parmers.username){
             this.dialog_show("姓名不能为空");
             return;
-        }else if (!password){
+        }else if (!parmers.password){
             this.dialog_show("密码不能为空");
             return;
         }
-        Accounts.createUser({username:name, password:password}, function(error){
+        Accounts.createUser(parmers, function(error){
             if (error && error.reason == "Username already exists."){
                 data = {message:"用户已存在", success:false};
             }else {

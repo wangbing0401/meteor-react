@@ -2,7 +2,7 @@ Register = React.createClass({
     register:function(){
         var name = this.refs.form.userName.value,
             password = this.refs.form.userPassword.value;
-        WB.createUser(name, password, function(result){
+        WB.createUser({username:name, password:password}, function(result){
             WB.dialog_show(result.message)
         });
     },
