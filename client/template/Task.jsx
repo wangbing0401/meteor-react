@@ -1,9 +1,8 @@
 Task = React.createClass({
-    render(){
+    render:function(){
+        var homeLogin = {marginTop:'20px'};
         return(
-            <a href="/Login">
-                请登陆
-            </a>
+            <a href="/Login" className="waves-effect waves-light btn" style={homeLogin}><i className="material-icons left">cloud</i>登陆注册</a>
         )
     }
 });
