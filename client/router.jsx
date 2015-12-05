@@ -3,12 +3,11 @@ var adminRoutes = FlowRouter.group({
     name: 'admin',
     triggersEnter: [function(context, redirect) {
         if (!Meteor.user()){
-            FlowRouter.go('login');
+            redirect('login');
         }
     }]
 });
-
-adminRoutes.route("/", {
+FlowRouter.route("/", {
     name: 'home',
     action: function() {
         ReactLayout.render(App, {
