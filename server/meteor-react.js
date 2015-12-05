@@ -14,6 +14,8 @@ Api.addRoute("wechat", {authRequired: false}, {
     post:function(){
         var message = get_message_from_request(this.request);
         console.log(message);
+        console.log(template_message(message));
+        this.response.write(template_message(message));
         this.done();
         return '';
     }
