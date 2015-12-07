@@ -10,5 +10,25 @@ template_message = function(data){
         <MsgType><![CDATA[${data.MsgType}]]></MsgType>
         <Content><![CDATA[${data.Content}]]></Content>
         </xml>`;
+    }else if (data.MsgType == "image"){
+
+    }else if (data.MsgType == "voice"){
+
+    }else if (data.MsgType == "video"){
+
+    }else if (data.MsgType == "shortvideo"){
+
+    }else if (data.MsgType == "location"){
+
+    }else if (data.MsgType == "link"){
+
+    }else if (data.MsgType == "event" && data.Event == "subscribe"){
+        return `<xml>
+        <ToUserName><![CDATA[${data.FromUserName}]]></ToUserName>
+        <FromUserName><![CDATA[${data.ToUserName}]]></FromUserName>
+        <CreateTime>12345678</CreateTime>
+        <MsgType><![CDATA[text]]></MsgType>
+        <Content><![CDATA[欢迎关注前端订阅号,我们会带给您最前沿的前端知识,这里有H5,angular,react,meteor等最前沿前端知识.]]></Content>
+        </xml>`;
     }
 }
