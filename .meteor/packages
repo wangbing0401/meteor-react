@@ -25,3 +25,4 @@ nimble:restivus
 jparker:crypto-sha1
 http
 peerlibrary:xml2js
+ejson

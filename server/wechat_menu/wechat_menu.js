@@ -1,38 +1,26 @@
 /**
  * Created by tx-0020 on 15/12/7.
  */
-WeChat = {
-    menu: {
-        "button":[
-            {
-                "type":"click",
-                "name":"今日歌曲",
-                "key":"V1001_TODAY_MUSIC"
-            },
-            {
-                "name":"菜单",
-                "sub_button":[
-                    {
-                        "type":"view",
-                        "name":"搜索",
-                        "url":"http://www.soso.com/"
-                    },
-                    {
-                        "type":"view",
-                        "name":"视频",
-                        "url":"http://v.qq.com/"
-                    },
-                    {
-                        "type":"click",
-                        "name":"赞一下我们",
-                        "key":"V1001_GOOD"
-                    }]
-            }]
-    }
+WeChat.menu = {
+    "button":[
+        {
+            "type":"click",
+            "name":"最新文章",
+            "key":"publish_news"
+        },
+        {
+            "name":"更多",
+            "sub_button":[
+                {
+                    "type":"view",
+                    "name":"论坛首页",
+                    "url":"http://ciktw7dwrt.proxy.qqbrowser.cc/list"
+                }]
+        }]
 }
 
 setWechat_menu = function(){
-    Meteor.http.post('https://api.weixin.qq.com/cgi-bin/menu/create?access_token='+WeChat.access_token, WeChat.menu, function(error, data){
-        console.log(data);
+    Meteor.http.post('https://api.weixin.qq.com/cgi-bin/menu/create?access_token='+WeChat.access_token, {data:WeChat.menu}, function(error, data){
+        console.log(1111111,data);
     });
 }
