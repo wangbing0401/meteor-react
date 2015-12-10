@@ -4,22 +4,14 @@ App = React.createClass({
         history.back();
     },
     render:function() {
+        var style = {marginBottom:'54px'};
         return (
-            <div>
-                <nav>
-                    <div className="nav-wrapper">
-                        <a href="#" className="brand-logo center">login</a>
-                        {FlowRouter.current().route.name == 'home' ? '' :
-                        <ul id="nav-mobile">
-                            <li><a onClick={this.page_back}>返回</a></li>
-                        </ul>
-                            }
-                    </div>
-                </nav>
-
-                <ul className="container">
+            <div className = "content">
+                <ul className="container" style={style}>
                     {this.props.content}
                 </ul>
+
+                {this.props.tabs}
             </div>
         );
     }

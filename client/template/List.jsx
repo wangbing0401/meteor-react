@@ -6,7 +6,6 @@ List = React.createClass({
         ];
     },
     renderData:function(){
-        console.log(111);
         return this.getData().map((data) => {
             return <Item key={data.key} />
         });
