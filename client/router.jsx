@@ -40,4 +40,13 @@ adminRoutes.route("/list", {
             tabs: <Tabs />
         });
     }
-})
+});
+adminRoutes.route("/activity", {
+    name: 'activity',
+    action: function(){
+        ReactLayout.render(App, {
+            content: <Activity />,
+            tabs: <Tabs />
+        });
+    }
+});
