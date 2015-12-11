@@ -50,3 +50,21 @@ adminRoutes.route("/activity", {
         });
     }
 });
+adminRoutes.route("/atom", {
+    name: 'atom',
+    action: function(){
+        ReactLayout.render(App, {
+            content: <Atom />,
+            tabs: <Tabs />
+        });
+    }
+});
+adminRoutes.route("/me", {
+    name: 'me',
+    action: function(){
+        ReactLayout.render(App, {
+            content: <Me />,
+            tabs: <Tabs />
+        });
+    }
+});
