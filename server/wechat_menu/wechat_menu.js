@@ -14,7 +14,7 @@ WeChat.menu = {
                 {
                     "type":"view",
                     "name":"论坛首页",
-                    "url":"http://ciktw7dwrt.proxy.qqbrowser.cc/list"
+                    "url":"http://101.200.237.34/list"
                 }]
         }]
 }
