@@ -14,13 +14,13 @@ WeChat.menu = {
                 {
                     "type":"view",
                     "name":"论坛首页",
-                    "url":"http://101.200.237.34/list"
+                    "url":"http://h5vip.org/list"
                 }]
         }]
 }
 
 setWechat_menu = function(){
     Meteor.http.post('https://api.weixin.qq.com/cgi-bin/menu/create?access_token='+WeChat.access_token, {data:WeChat.menu}, function(error, data){
-        console.log(1111111,data);
+
     });
 }

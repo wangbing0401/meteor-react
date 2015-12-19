@@ -2,7 +2,7 @@ var adminRoutes = FlowRouter.group({
     //prefix: '/admin',
     name: 'admin',
     triggersEnter: [function(context, redirect) {
-        if (!Meteor.user()){
+        if (!Meteor.userId()){
             redirect('login');
         }
     }]
