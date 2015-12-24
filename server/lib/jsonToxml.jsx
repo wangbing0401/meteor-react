@@ -28,7 +28,7 @@ template_message = function(data){
         <FromUserName><![CDATA[${data.ToUserName}]]></FromUserName>
         <CreateTime>${new Date()}</CreateTime>
         <MsgType><![CDATA[text]]></MsgType>
-        <Content><![CDATA[欢迎关注前端订阅号,我们会带给您最前沿的前端知识,这里有H5,angular,react,meteor等最前沿前端知识.]]></Content>
+        <Content><![CDATA[欢迎关注H5前端公众号,我们会带给您最前沿的前端知识,这里有H5,angular,react,meteor等最前沿前端知识.]]></Content>
         </xml>`;
     }else if(data.Event == "CLICK" && data.EventKey == "publish_news"){
         return `<xml>
