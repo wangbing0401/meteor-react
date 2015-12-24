@@ -13,12 +13,12 @@ Tabs = React.createClass({
         }
     },
     render:function(){
+        var tabs_arr = this.props.count.split(',');
         return (
             <div className = "tabs">
-                <span onClick={this.click_span}>文章</span>
-                <span onClick={this.click_span}>活动</span>
-                <span onClick={this.click_span}>发帖</span>
-                <span onClick={this.click_span}>我</span>
+                {tabs_arr.map((data) => {
+                    return <span key={data} onClick={this.click_span}>{data}</span>
+                })}
             </div>
         )
     }

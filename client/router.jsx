@@ -37,7 +37,7 @@ adminRoutes.route("/list", {
     action: function(){
         ReactLayout.render(App, {
             content: <List />,
-            tabs: <Tabs />
+            tabs: <Tabs count="文章,活动,发帖,我" />
         });
     }
 });
@@ -46,7 +46,7 @@ adminRoutes.route("/activity", {
     action: function(){
         ReactLayout.render(App, {
             content: <Activity />,
-            tabs: <Tabs />
+            tabs: <Tabs count="文章,活动,发帖,我" />
         });
     }
 });
@@ -55,7 +55,7 @@ adminRoutes.route("/atom", {
     action: function(){
         ReactLayout.render(App, {
             content: <Atom />,
-            tabs: <Tabs />
+            tabs: <Tabs count="文章,活动,发帖,我" />
         });
     }
 });
@@ -64,7 +64,7 @@ adminRoutes.route("/me", {
     action: function(){
         ReactLayout.render(App, {
             content: <Me />,
-            tabs: <Tabs />
+            tabs: <Tabs count="文章,活动,发帖,我" />
         });
     }
 });
