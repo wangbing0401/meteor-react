@@ -14,10 +14,11 @@ Tabs = React.createClass({
     },
     render:function(){
         var tabs_arr = this.props.count.split(',');
+        var active = this.props.active;
         return (
             <div className = "tabs">
                 {tabs_arr.map((data) => {
-                    return <span key={data} onClick={this.click_span}>{data}</span>
+                    return <span key={data} onClick={this.click_span} style={(active&&data=='文章')?{color:'red'}:{}} >{data}</span>
                 })}
             </div>
         )

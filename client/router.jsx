@@ -37,7 +37,7 @@ adminRoutes.route("/list", {
     action: function(){
         ReactLayout.render(App, {
             content: <List />,
-            tabs: <Tabs count="文章,活动,发帖,我" />
+            tabs: <Tabs count="文章,活动,发帖,我" active="true" />
         });
     }
 });
