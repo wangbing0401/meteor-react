@@ -26,3 +26,5 @@ jparker:crypto-sha1
 http
 peerlibrary:xml2js
 ejson
+aldeed:simple-schema    #添加schema包，限制集合数据类型
+aldeed:collection2

@@ -1,4 +1,4 @@
-Access_token = new Mongo.Collection('accessToken');
+
 var Api = new Restivus({
     useDefaultAuth: false,
     prettyJson: false

@@ -59,6 +59,14 @@ adminRoutes.route("/atom", {
         });
     }
 });
+adminRoutes.route("/publish_atom", {
+    name: 'publish_atom',
+    action: function(){
+        ReactLayout.render(App, {
+            content: <PublishAtom />
+        });
+    }
+});
 adminRoutes.route("/me", {
     name: 'me',
     action: function(){
