@@ -1,14 +1,21 @@
 Atom = React.createClass({
-    getData1:function(){
+    getInitialState:function(){
+        return {data:[]};
+    },
+    getData1:function(callback){
         Meteor.call("get_post", {}, function(error, result){
             if(error){
                 WB.dialog_show("网络开小差");
             }else{
-                console.log(result);
-                return result;
+                callback(result);
             }
         });
-        return "";
+    },
+    componentDidMount:function(){
+        var self = this
+        this.getData1(function(result){
+            self.setState({data:result});
+        })
     },
     publish_atom:function(){
         FlowRouter.go('publish_atom');
@@ -19,10 +26,11 @@ Atom = React.createClass({
             <div>
                 <i className="material-icons" style={icon_style} onClick={this.publish_atom} >border_color</i>
                 <div style={{clear:'both'}}></div>
-
-                {this.getData1().map(data =>{
-                    return <Atom_item key={data._id} />
-                })}
+                {
+                    this.state.data.map((d) =>{
+                        return <AtomItem key={d._id} title={d.title} />
+                    })
+                }
             </div>
         )
     }

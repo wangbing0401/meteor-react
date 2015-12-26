@@ -15,6 +15,10 @@ PostsSchema = new SimpleSchema({
         type: String,
         label: '帖子所属者id'
     },
+    create_time:{
+        type: Date,
+        label: '帖子创建时间'
+    },
     imageUrl:{
         type: String,
         label: '帖子图片url',
@@ -29,8 +33,8 @@ Meteor.methods({
         var result = Posts.insert(data);
         return data;
     },
-    get_post:function(){
+    get_post:function(data){
         var result = Posts.find();
-        return result;
+        return result.fetch();
     }
 });

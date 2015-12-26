@@ -1,12 +1,16 @@
 PublishAtom = React.createClass({
     post:function(){
-        var data = {userId:Meteor.userId(), title:this.refs.form.post_title.value, content:this.refs.form.post_content.value};
+        var data = {userId:Meteor.userId(),
+            title:this.refs.form.post_title.value,
+            content:this.refs.form.post_content.value,
+            create_time:new Date()
+        };
         Meteor.call("publish_post", data, function(error, data){
             if(error){
                 WB.dialog_show('发布失败');
             }else{
                 WB.dialog_show('发布成功');
-                location.history.back();
+                FlowRouter.back();
             }
         });
     },
