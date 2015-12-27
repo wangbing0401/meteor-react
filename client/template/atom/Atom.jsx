@@ -12,7 +12,7 @@ Atom = React.createClass({
         });
     },
     componentDidMount:function(){
-        var self = this
+        var self = this;
         this.getData1(function(result){
             self.setState({data:result});
         })
