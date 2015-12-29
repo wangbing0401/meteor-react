@@ -59,6 +59,14 @@ adminRoutes.route("/atom", {
         });
     }
 });
+adminRoutes.route("/atom_detail", {
+    name: 'atom_detail',
+    action: function(params, queryParams){
+        ReactLayout.render(App, {
+            content: <AtomDetail atomId={queryParams.atomId} />
+        });
+    }
+});
 adminRoutes.route("/publish_atom", {
     name: 'publish_atom',
     action: function(){

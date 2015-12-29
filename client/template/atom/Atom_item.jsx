@@ -1,7 +1,10 @@
 AtomItem = React.createClass({
+    click_item:function(id){
+        FlowRouter.go('atom_detail', null, {atomId:id});
+    },
     render:function(){
         return(
-            <ul className="collection">
+            <ul className="collection" onClick={this.click_item.bind(this, this.props.id)} >
                 <li className="collection-item avatar">
                     <i className="Large material-icons circle" style={{fontSize:'2.0em'}} >account_box</i>
                     <span className="title">{this.props.title}</span>

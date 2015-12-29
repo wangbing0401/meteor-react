@@ -28,7 +28,7 @@ Atom = React.createClass({
                 <div style={{clear:'both'}}></div>
                 {
                     this.state.data.map((d) =>{
-                        return <AtomItem key={d._id} title={d.title} />
+                        return <AtomItem key={d._id} id={d._id} title={d.title} />
                     })
                 }
             </div>
