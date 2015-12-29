@@ -5,7 +5,9 @@ PublishAtom = React.createClass({
             content:this.refs.form.post_content.value,
             create_time:new Date()
         };
+        Session.set('loading_show', true);
         Meteor.call("publish_post", data, function(error, data){
+            Session.set('loading_show', false);
             if(error){
                 WB.dialog_show('发布失败');
             }else{

@@ -1,8 +1,4 @@
 App = React.createClass({
-    // This mixin makes the getMeteorData method work
-    page_back:function(){
-        history.back();
-    },
     render:function() {
         var style = {marginBottom:'54px'};
         return (
@@ -10,6 +6,8 @@ App = React.createClass({
                 <ul className="container" style={style}>
                     {this.props.content}
                 </ul>
+
+                {Session.get('loading_show')?<Loading />:''}
 
                 {this.props.tabs}
             </div>
