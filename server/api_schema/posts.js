@@ -37,13 +37,13 @@ Meteor.methods({
         var result = Posts.find().fetch();
         result.forEach(function(post){
             post.author = Meteor.users.findOne(post.userId).username;
-        })
+        });
         return result;
     },
     get_post_detail:function(data){
         var result = Posts.findOne({_id:data.atomId});
         var userresult = Meteor.users.findOne({_id:result.userId});
-        result.user = userresult
+        result.user = userresult;
         return result;
     }
 });
