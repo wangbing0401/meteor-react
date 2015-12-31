@@ -34,8 +34,11 @@ Meteor.methods({
         return data;
     },
     get_post:function(data){
-        var result = Posts.find();
-        return result.fetch();
+        var result = Posts.find().fetch();
+        result.forEach(function(post){
+            post.author = Meteor.users.findOne(post.userId).username;
+        })
+        return result;
     },
     get_post_detail:function(data){
         var result = Posts.findOne({_id:data.atomId});
