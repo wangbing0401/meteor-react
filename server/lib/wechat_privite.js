@@ -22,6 +22,8 @@ WeChat = {
     getAccessToken:function(){
         Meteor.http.get('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+WeChat.appid+'&secret='+WeChat.appSecret, function(error,data){
             if (data){
+                var time_val = new Date();
+                WeChat.time_val = (time_val.getTime())/1000;
                 WeChat.access_token = EJSON.parse(data.content).access_token;
                 setWechat_menu();
             }
