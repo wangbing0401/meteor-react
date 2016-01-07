@@ -18,7 +18,7 @@ Tabs = React.createClass({
         return (
             <div className = "tabs">
                 {tabs_arr.map((data) => {
-                    return <span key={data} onClick={this.click_span} style={(active&&data=='文章')?{color:'red'}:{}} >{data}</span>
+                    return <span key={data} onClick={this.click_span} style={(active==data)?{color:'red'}:{}} >{data}</span>
                 })}
             </div>
         )
