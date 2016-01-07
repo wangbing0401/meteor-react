@@ -28,3 +28,4 @@ peerlibrary:xml2js
 ejson
 aldeed:simple-schema    #添加schema包，限制集合数据类型
 aldeed:collection2      #schema依赖包
+summernote:summernote   #html编辑器

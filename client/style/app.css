@@ -36,3 +36,7 @@
     margin-top: 0.82rem;
     margin-bottom: 60px;
 }
+/*PCArticle*/
+.note-editor.note-frame .note-editing-area .note-editable{
+    min-height: 350px;
+}

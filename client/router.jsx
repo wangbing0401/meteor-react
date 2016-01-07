@@ -84,3 +84,11 @@ adminRoutes.route("/me", {
         });
     }
 });
+adminRoutes.route("/PCarticle", {
+    name: 'PCarticle',
+    action: function(){
+        ReactLayout.render(App, {
+            content: <PCarticle />
+        });
+    }
+});
