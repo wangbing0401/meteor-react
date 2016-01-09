@@ -22,10 +22,13 @@ kadira:flow-router
 materialize:materialize
 planettraining:material-design-icons-font
 nimble:restivus
-jparker:crypto-sha1
-http
-peerlibrary:xml2js
-ejson
+jparker:crypto-sha1     #微信加密库
+http                    #后台接口库
+peerlibrary:xml2js      #xml解析库
+ejson                   #json库
 aldeed:simple-schema    #添加schema包，限制集合数据类型
 aldeed:collection2      #schema依赖包
 summernote:summernote   #html编辑器
+kevohagan:sweetalert    #弹出框
+iyyang:cfs-aliyun       #阿里oss
+cfs:standard-packages

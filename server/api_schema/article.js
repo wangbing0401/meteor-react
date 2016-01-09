@@ -25,5 +25,7 @@ ArticleSchema = new SimpleSchema({
 Article.attachSchema(ArticleSchema);
 
 Meteor.methods({
+    insert_article: function(data){
 
+    }
 });
