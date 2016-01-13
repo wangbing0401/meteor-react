@@ -1,12 +1,19 @@
 PCarticle = React.createClass({
+    getInitialState:function(){
+        return {file:null};
+    },
     componentDidMount:function(){
         $('#summernote').summernote();
     },
     article:function(event){
-        console.log(event.target.files[0]);
+        var self = this;
+        WB.loadImage(event.target.files, function(result){
+            self.setState({file:result});
+            console.log(result);
+        });
     },
     post:function(){
-        Meteor.call('insert_article', data, function(error, result){
+        Meteor.call('insert_article', {data:this.state.file}, function(error, result){
 
         });
     },
@@ -31,6 +38,7 @@ PCarticle = React.createClass({
                         <input className="file-path validate" type="text" placeholder="只能上传一张" />
                     </div>
                 </div>
+                <div>{this.state.file && this.state.file.name}</div>
                 <a className="waves-effect waves-light btn-large" style={{width:'100%',marginTop:'20px'}} onClick={this.post} >提交</a>
             </form>
         )

@@ -32,3 +32,5 @@ summernote:summernote   #html编辑器
 kevohagan:sweetalert    #弹出框
 iyyang:cfs-aliyun       #阿里oss
 cfs:standard-packages
+cfs:filesystem
+cfs:graphicsmagick

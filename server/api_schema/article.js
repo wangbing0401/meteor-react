@@ -26,6 +26,8 @@ Article.attachSchema(ArticleSchema);
 
 Meteor.methods({
     insert_article: function(data){
-
+        Avatars.insert(data.data, function(err, fileObj){
+            console.log(err, fileObj);
+        });
     }
 });
