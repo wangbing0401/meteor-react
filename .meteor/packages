@@ -30,7 +30,7 @@ aldeed:simple-schema    #添加schema包，限制集合数据类型
 aldeed:collection2      #schema依赖包
 summernote:summernote   #html编辑器
 kevohagan:sweetalert    #弹出框
-iyyang:cfs-aliyun       #阿里oss
-cfs:standard-packages
-cfs:filesystem
-cfs:graphicsmagick
+meteorhacks:npm         #支持node包
+
+
+npm-container

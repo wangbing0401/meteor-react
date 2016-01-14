@@ -13,8 +13,28 @@ PCarticle = React.createClass({
         });
     },
     post:function(){
-        Meteor.call('insert_article', {data:this.state.file}, function(error, result){
-
+        var article_title = this.refs.form.article_title.value;
+        var article_content = $('#summernote').summernote('code');
+        console.log(article_content);
+        var data = {title:article_title,
+            content:article_content,
+            imageUrl:this.state.file,
+            create_time:new Date()
+        };
+        if(!article_title){
+            WB.dialog_show('请输入文章标题');
+            return;
+        }
+        if(!article_content){
+            WB.dialog_show('请输入文章内容');
+            return;
+        }
+        Meteor.call('post_article', data, function(error, result){
+            if(error){
+                WB.dialog_show('网络开小差');
+            }else{
+                WB.dialog_show('发布成功');
+            }
         });
     },
     render: function(){

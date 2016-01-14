@@ -14,7 +14,6 @@ Atom = React.createClass({
     componentDidMount:function(){
         var self = this;
         this.getData1(function(result){
-            console.log(result);
             self.setState({data:result});
         })
     },
