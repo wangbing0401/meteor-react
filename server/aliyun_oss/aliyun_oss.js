@@ -8,3 +8,5 @@ Oss = new oss_require.OSS({
     endpoint: 'http://oss-cn-beijing-internal.aliyuncs.com',
     apiVersion: '2013-10-15'
 });
+
+//endpoint     http://oss-cn-beijing-internal.aliyuncs.com阿里云             http://oss-cn-beijing.aliyuncs.com本地测试

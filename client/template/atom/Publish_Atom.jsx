@@ -12,7 +12,7 @@ PublishAtom = React.createClass({
                 WB.dialog_show('发布失败');
             }else{
                 WB.dialog_show('发布成功');
-                FlowRouter.go('atom');
+                window.history.back();
             }
         });
     },
