@@ -4,7 +4,7 @@ Atom = React.createClass({
         var data = {};
         var handle = Meteor.subscribe("get_post_list");
         if(handle.ready()){
-            data.posts = Posts.find().fetch();
+            data.posts = Posts.find({}, {sort:{create_time:-1}}).fetch();
             data.posts.forEach(function(post){
                 post.author = Meteor.users.findOne(post.userId).username;
             });
