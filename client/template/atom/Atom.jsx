@@ -1,21 +1,15 @@
 Atom = React.createClass({
-    getInitialState:function(){
-        return {data:[]};
-    },
-    getData1:function(callback){
-        Meteor.call("get_post", {}, function(error, result){
-            if(error){
-                WB.dialog_show("网络开小差");
-            }else{
-                callback(result);
-            }
-        });
-    },
-    componentDidMount:function(){
-        var self = this;
-        this.getData1(function(result){
-            self.setState({data:result});
-        })
+    mixins:[ReactMeteorData],
+    getMeteorData:function(){
+        var data = {};
+        var handle = Meteor.subscribe("get_post_list");
+        if(handle.ready()){
+            data.posts = Posts.find().fetch();
+            data.posts.forEach(function(post){
+                post.author = Meteor.users.findOne(post.userId).username;
+            });
+        }
+        return data;
     },
     publish_atom:function(){
         FlowRouter.go('publish_atom');
@@ -27,9 +21,9 @@ Atom = React.createClass({
                 <i className="material-icons" style={icon_style} onClick={this.publish_atom} >border_color</i>
                 <div style={{clear:'both'}}></div>
                 {
-                    this.state.data.map((d) =>{
+                    this.data.posts?this.data.posts.map((d) =>{
                         return <AtomItem key={d._id} id={d._id} title={d.title} author={d.author} />
-                    })
+                    }):''
                 }
             </div>
         )

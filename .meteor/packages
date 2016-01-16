@@ -21,7 +21,7 @@ kadira:react-layout
 kadira:flow-router
 materialize:materialize
 planettraining:material-design-icons-font
-nimble:restivus
+nimble:restivus         #后台api接口库
 jparker:crypto-sha1     #微信加密库
 http                    #后台接口库
 peerlibrary:xml2js      #xml解析库
