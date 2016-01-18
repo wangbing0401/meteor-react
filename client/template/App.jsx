@@ -1,7 +1,7 @@
 App = React.createClass({
     getInitialState:function(){
         return {
-            loading_show:true
+            loading_show:false
         }
     },
     componentDidMount:function(){
