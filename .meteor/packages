@@ -34,3 +34,4 @@ meteorhacks:npm         #支持node包
 
 
 npm-container
+aramk:pubsub            #订阅发布 组件间的传值

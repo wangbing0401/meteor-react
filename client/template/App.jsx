@@ -1,4 +1,20 @@
 App = React.createClass({
+    getInitialState:function(){
+        return {
+            loading_show:true
+        }
+    },
+    componentDidMount:function(){
+        var self = this;
+        this.pubsub_token = PubSub.subscribe('loading_show', function(msg, data){
+            self.setState({
+                loading_show:data
+            });
+        });
+    },
+    componentWillUnmount:function(){
+        PubSub.unsubscribe(this.pubsub_token);
+    },
     render:function() {
         var style = {marginBottom:'54px', padding:'0'};
         return (
@@ -7,7 +23,7 @@ App = React.createClass({
                     {this.props.content}
                 </ul>
 
-                {Session.get('loading_show')?<Loading />:''}
+                {this.state.loading_show?<Loading />:''}
 
                 {this.props.tabs}
             </div>

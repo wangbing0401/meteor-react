@@ -1,9 +1,11 @@
 Atom = React.createClass({
     mixins:[ReactMeteorData],
     getMeteorData:function(){
+        PubSub.subscribe('loading_show', true);
         var data = {};
         var handle = Meteor.subscribe("get_post_list");
         if(handle.ready()){
+            PubSub.subscribe('loading_show', false);
             data.posts = Posts.find({}, {sort:{create_time:-1}}).fetch();
             data.posts.forEach(function(post){
                 post.author = Meteor.users.findOne(post.userId).username;
