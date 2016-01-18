@@ -5,6 +5,8 @@ CommentList = React.createClass({
         var handle = Meteor.subscribe("get_comment_list", this.props.atomId);
         if(handle.ready()){
             data.comment_list = Comment.find({postId:this.props.atomId}).fetch();
+            var user = Meteor.users.find();
+            console.log(user);
         }
         console.log(data);
         return data;
