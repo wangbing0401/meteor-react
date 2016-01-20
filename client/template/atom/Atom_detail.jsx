@@ -45,7 +45,7 @@ AtomDetail = React.createClass({
                 <div style={{clear:'both'}}></div>
                 <div className="atom_detail_content">{this.state.data.content}</div>
 
-                <CommentList atomId={this.props.atomId} />
+                <CommentList key={this.props.atomId} atomId={this.props.atomId} />
 
                 <form className="col s12" ref="form">
                     <div className="row">

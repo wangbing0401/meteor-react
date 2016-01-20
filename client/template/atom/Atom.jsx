@@ -7,9 +7,6 @@ Atom = React.createClass({
         if(handle.ready()){
             PubSub.publish('loading_show', false);
             data.posts = Posts.find({}, {sort:{create_time:-1}}).fetch();
-            data.posts.forEach(function(post){
-                post.author = Meteor.users.findOne(post.userId).username;
-            });
         }
         return data;
     },
@@ -24,7 +21,7 @@ Atom = React.createClass({
                 <div style={{clear:'both'}}></div>
                 {
                     this.data.posts?this.data.posts.map((d) =>{
-                        return <AtomItem key={d._id} id={d._id} title={d.title} author={d.author} />
+                        return <AtomItem key={d._id} id={d._id} title={d.title} author={d.username} />
                     }):''
                 }
             </div>
