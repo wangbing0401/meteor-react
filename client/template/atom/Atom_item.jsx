@@ -9,6 +9,7 @@ AtomItem = React.createClass({
                     <i className="Large material-icons circle" style={{fontSize:'2.0em'}} >account_box</i>
                     <span className="title">{this.props.title}</span>
                     <p>{this.props.author}</p>
+                    <p><span style={{color:'#D58B47'}}>{this.props.comment_count}</span>条评论</p>
                     <a href="#" className="secondary-content"><i className="material-icons">grade</i></a>
                 </li>
             </ul>
