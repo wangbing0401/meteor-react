@@ -73,5 +73,9 @@ WB = {
             // 读取文件内容
             reader.readAsDataURL(src);
         }
+    },
+    formatDate(strTime){
+        var date = new Date(strTime);
+        return date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes();
     }
 };

@@ -33,6 +33,7 @@ AtomDetail = React.createClass({
             if(error){
                 WB.dialog_show("网络开小差");
             }else{
+                $("#comment").val('');
                 WB.dialog_show("评论成功");
             }
         });
@@ -47,7 +48,7 @@ AtomDetail = React.createClass({
 
                 <CommentList key={this.props.atomId} atomId={this.props.atomId} />
 
-                <form className="col s12" ref="form">
+                <form className="col s12" ref="form" style={{marginTop:'30px'}}>
                     <div className="row">
                         <div className="input-field col s12">
                             <textarea id="comment" className="materialize-textarea" name="comment"></textarea>
