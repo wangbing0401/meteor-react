@@ -41,7 +41,7 @@ template_message = function(data){
         <item>
         <Title><![CDATA[这是title]]></Title>
         <Description><![CDATA[这是描述]]></Description>
-        <PicUrl><![CDATA[http://101.200.237.34/images/news.png]]></PicUrl>
+        <PicUrl><![CDATA[http://www.h5vip.org/images/news.png]]></PicUrl>
         <Url><![CDATA[http://www.baidu.com]]></Url>
         </item>
         </Articles>

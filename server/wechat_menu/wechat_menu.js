@@ -14,7 +14,7 @@ WeChat.menu = {
                 {
                     "type":"view",
                     "name":"论坛首页",
-                    "url":"http://101.200.237.34/list"
+                    "url":"http://www.h5vip.org/list"
                 }]
         }]
 }
