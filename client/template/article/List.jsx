@@ -15,7 +15,7 @@ List = React.createClass({
             <div>
                 {
                     this.data.articles?this.data.articles.map((data) => {
-                        return <Item key={data._id} title={data.title} content={data.content} image_url={data.imageUrl} />
+                        return <Item key={data._id} articleId={data._id} title={data.title} content={data.content} image_url={data.imageUrl} />
                     }):''
                 }
             </div>

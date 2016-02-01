@@ -41,6 +41,14 @@ adminRoutes.route("/list", {
         });
     }
 });
+adminRoutes.route('/article_detail', {
+    name: 'article_detail',
+    action: function(params, queryParams){
+        ReactLayout.render(App, {
+            content: <ArticleDetail articleId={queryParams.articleId} />
+        });
+    }
+}),
 adminRoutes.route("/activity", {
     name: 'activity',
     action: function(){

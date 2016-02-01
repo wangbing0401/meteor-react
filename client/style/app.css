@@ -40,3 +40,14 @@
 .note-editor.note-frame .note-editing-area .note-editable{
     min-height: 350px;
 }
+/*Article*/
+.article_detail_title{
+    text-align: center;
+}
+.article_detail_time{
+    float: right;
+}
+.article_detail_content{
+    margin-top: 0.82rem;
+    margin-bottom: 60px;
+}
