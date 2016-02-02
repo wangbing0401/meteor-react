@@ -21,7 +21,7 @@ Atom = React.createClass({
                 <div style={{clear:'both'}}></div>
                 {
                     this.data.posts?this.data.posts.map((d) =>{
-                        return <AtomItem key={d._id} id={d._id} title={d.title} author={d.username} comment_count={d.comment_count} />
+                        return <AtomItem key={d._id} id={d._id} title={d.title} author={d.username} authorId={d.userId} comment_count={d.comment_count} />
                     }):''
                 }
             </div>
