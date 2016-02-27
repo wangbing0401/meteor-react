@@ -35,3 +35,4 @@ meteorhacks:npm         #支持node包
 
 npm-container
 aramk:pubsub            #订阅发布 组件间的传值
+tmeasday:publish-counts #订阅数据库表数据条数
