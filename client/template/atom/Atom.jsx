@@ -17,11 +17,16 @@ Atom = React.createClass({
     componentDidMount: function(){
         var self = this;
         var mark = 1;
+        var refresh = 0;
         $(window).scroll(function(){
             if($(document).scrollTop()>=$(document).height()-$(window).height()){
                 if(Counts.get('atom_count') != atom_count){
                     self.getMeteorData(++mark);
                 }else{
+                    if(refresh == 1){
+                        return;
+                    }
+                    refresh = 1;
                     WB.dialog_show("没有更多数据了");
                 }
             }
