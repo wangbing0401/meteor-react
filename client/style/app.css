@@ -52,3 +52,9 @@
     margin-top: 0.82rem;
     margin-bottom: 60px;
 }
+.card:first-of-type{
+    margin-top: 55px;
+}
+.article_tabs span:first-of-type{
+    color: red;
+}

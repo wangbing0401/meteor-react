@@ -19,6 +19,7 @@ App = React.createClass({
         var style = {marginBottom:'54px', padding:'0'};
         return (
             <div className = "content">
+                {this.props.top}
                 <ul className="container" style={style}>
                     {this.props.content}
                 </ul>

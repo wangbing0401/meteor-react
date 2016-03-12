@@ -36,6 +36,7 @@ adminRoutes.route("/list", {
     name: 'list',
     action: function(){
         ReactLayout.render(App, {
+            top: <ArticleTabs />,
             content: <List />,
             tabs: <Tabs count="文章,活动,发帖,我" active="文章" />
         });

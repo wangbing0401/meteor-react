@@ -9,7 +9,6 @@ PCarticle = React.createClass({
         var self = this;
         WB.loadImage(event.target.files, function(result){
             self.setState({file:result});
-            console.log(result);
         });
     },
     post:function(){
@@ -47,6 +46,19 @@ PCarticle = React.createClass({
                     </div>
                 </div>
 
+                <div className="row">
+                    <div className="input-field col s12">
+                        <select style={{display:'block'}}>
+                            <option value="" disabled selected>选择类型</option>
+                            <option value="H5">H5</option>
+                            <option value="angular">angular</option>
+                            <option value="meteor">meteor</option>
+                            <option value="react">react</option>
+                            <option value="其它">其它</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div id="summernote"></div>
 
                 <div className="file-field input-field">
@@ -58,7 +70,6 @@ PCarticle = React.createClass({
                         <input className="file-path validate" type="text" placeholder="只能上传一张" />
                     </div>
                 </div>
-                <div>{this.state.file && this.state.file.name}</div>
                 <a className="waves-effect waves-light btn-large" style={{width:'100%',marginTop:'20px'}} onClick={this.post} >提交</a>
             </form>
         )
