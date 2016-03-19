@@ -2,11 +2,10 @@ var atom_count;
 Atom = React.createClass({
     mixins:[ReactMeteorData],
     getMeteorData:function(mark){
-        Meteor.subscribe('atom_count');
         var mark = mark || 1;
         PubSub.publish('loading_show', true);
         var data = {};
-        var handle = Meteor.subscribe("get_post_list", mark);
+        const handle = Meteor.subscribe("get_post_list", mark);
         if(handle.ready()){
             PubSub.publish('loading_show', false);
             data.posts = Posts.find({}, {sort:{create_time:-1}}).fetch();
