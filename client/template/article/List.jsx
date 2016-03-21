@@ -10,17 +10,17 @@ List = React.createClass({
             if(error){
                 WB.dialog_show("网络开小差");
             }else{
+                console.log(data);
                 self.setState({article_list:data.result});
                 self.setState({article_all_count:data.article_count});
             }
         });
     },
     componentDidMount:function(){
-        this.get_article_list({mark:1, article_type:1});
+        this.get_article_list({mark:1, article_type:window.article_type_all||1});
         var self = this;
-        var article_type_all;
         this.article_type_list = PubSub.subscribe('article_type', function(msg, data){
-            article_type_all = data || 1;
+            window.article_type_all = data || 1;
             var data = {mark:1, article_type:data};
             PubSub.publish('loading_show', true);
             self.get_article_list(data);
@@ -31,7 +31,7 @@ List = React.createClass({
         $(window).scroll(function(){
             if($(document).scrollTop()>=$(document).height()-$(window).height()){
                 PubSub.publish('loading_show', true);
-                var data = {mark:++mark, article_type:article_type_all||1};
+                var data = {mark:++mark, article_type:window.article_type_all||1};
                 if(self.state.article_list.length != self.state.article_all_count){
                     self.get_article_list(data);
                 }else{

@@ -1,4 +1,11 @@
 ArticleTabs = React.createClass({
+    componentDidMount: function(){
+        if(window.article_type_all){
+            $(".article_tabs span:nth-of-type("+window.article_type_all+")").css('color', 'red');
+        }else{
+            $(".article_tabs span:nth-of-type(1)").css('color', 'red');
+        }
+    },
     top_tabs: function(article_type){
         PubSub.publish('article_type', article_type);
         $(".article_tabs span").css('color', 'black');
