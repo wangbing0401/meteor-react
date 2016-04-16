@@ -1,4 +1,5 @@
 var article_count;
+var refresh = 0;
 List = React.createClass({
     getInitialState: function(){
         return {article_list:[], article_all_count:0};
@@ -23,10 +24,10 @@ List = React.createClass({
             var data = {mark:1, article_type:data};
             PubSub.publish('loading_show', true);
             self.get_article_list(data);
+            refresh = 0;
         });
 
         var mark = 1;
-        var refresh = 0;
         $(window).scroll(function(){
             if($(document).scrollTop()>=$(document).height()-$(window).height()){
                 PubSub.publish('loading_show', true);
