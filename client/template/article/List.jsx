@@ -10,7 +10,6 @@ List = React.createClass({
             if(error){
                 WB.dialog_show("网络开小差");
             }else{
-                console.log(data);
                 self.setState({article_list:data.result});
                 self.setState({article_all_count:data.article_count});
             }
