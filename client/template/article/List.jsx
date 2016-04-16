@@ -54,7 +54,7 @@ List = React.createClass({
             <div className="article_content" style={{overflow:'scroll'}}>
                 {
                     this.state.article_list?this.state.article_list.map((data) => {
-                        return <Item key={data._id} articleId={data._id} title={data.title} content={data.content} image_url={data.imageUrl} />
+                        return <Item key={data._id} articleId={data._id} title={data.title} content={data.content} image_url={data.imageUrl} type={data.type} />
                     }):''
                 }
             </div>

@@ -1,4 +1,27 @@
 Item = React.createClass({
+    getInitialState: function(){
+        return{
+            article_url: null
+        }
+    },
+    componentWillMount: function(){
+        if(this.props.image_url){
+            this.state.article_url = this.props.image_url;
+        }else{
+            if(this.props.type == 1){
+                this.state.article_url = 'http://wb-category-logo.oss-cn-beijing.aliyuncs.com/html5_icon.png';
+            }
+            if(this.props.type == 2){
+                this.state.article_url = 'http://wb-category-logo.oss-cn-beijing.aliyuncs.com/angular_icon.png';
+            }
+            if(this.props.type == 3){
+                this.state.article_url = 'http://wb-category-logo.oss-cn-beijing.aliyuncs.com/react_icon.png';
+            }
+            if(this.props.type == 4){
+                this.state.article_url = 'http://wb-category-logo.oss-cn-beijing.aliyuncs.com/meteor_icon.png';
+            }
+        }
+    },
     article_detail:function(articleId){
         FlowRouter.go('article_detail', null, {articleId:articleId});
     },
@@ -6,7 +29,7 @@ Item = React.createClass({
         return (
             <div className="card">
                 <div className="card-image waves-effect waves-block waves-light">
-                    <img className="activator" style={{maxHeight:'150px'}} src={this.props.image_url} />
+                    <img className="activator" style={{maxHeight:'150px'}} src={this.state.article_url} />
                 </div>
                 <div className="card-content">
                     <span className="card-title activator grey-text text-darken-4">{this.props.title}<i className="material-icons right">more_vert</i></span>
