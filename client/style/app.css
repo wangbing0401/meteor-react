@@ -22,8 +22,8 @@
     background-color: white;
 }
 .tabs span{
-    display: inline-block; flex: 1; -webkit-flex: 1;
-    height: 44px; line-height: 44px;
+    display: inline-block;
+    width: 25%; height: 44px; line-height: 44px;
     text-align: center;
 }
 /*Atom_detail*/
