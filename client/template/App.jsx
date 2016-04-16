@@ -16,7 +16,7 @@ App = React.createClass({
         PubSub.unsubscribe(this.pubsub_token);
     },
     render:function() {
-        var style = {marginBottom:'54px', padding:'0'};
+        var style = {marginBottom:'54px', padding:'0', overflowX:'auto'};
         return (
             <div className = "content">
                 {this.props.top}
