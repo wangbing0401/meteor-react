@@ -1,0 +1,39 @@
+a{
+    color: #333333;
+}
+a:hover{
+    text-decoration: none;
+    color: #333333;
+}
+a:visited{
+    text-decoration: none;
+    color: #333333;
+}
+.pc_top{
+    position: fixed;
+    width: 100%;
+    background-color: #FFF;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.11);
+    border: 0px;
+    color: #333333;
+    height: 50px;
+}
+.pc_top .pc_nav{
+    width: 85%;
+    margin: 0 auto;
+    padding: 0 0 0 15px;
+    height: 50px;
+}
+.pc_nav span{
+    display: inline-block;
+    height: 50px; line-height: 50px;
+}
+.pc_user_login{
+    float: right;
+    height: 50px;
+}
+.pc_user_login li{
+    float: left;
+    height: 50px; line-height: 50px;
+    padding: 0 15px;
+}

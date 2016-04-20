@@ -7,11 +7,38 @@ var adminRoutes = FlowRouter.group({
         }
     }]
 });
+var pcadminRoutes = FlowRouter.group({
+    name:'pcadmin',
+    triggersEnter: [function(context, redirect) {
+        if (!Meteor.userId()){
+            redirect('home');
+        }
+    }]
+});
 FlowRouter.route("/", {
     name: 'home',
     action: function() {
-        ReactLayout.render(App, {
-            content: <Task />
+        ReactLayout.render(PC, {
+            nav: <PcNav />,
+            content: <PcIndex />
+        });
+    }
+});
+FlowRouter.route('/pc_login', {
+    name: 'pc_login',
+    action: function(){
+        ReactLayout.render(PC, {
+            nav:<PcNav />,
+            content: <PcLogin />
+        });
+    }
+});
+FlowRouter.route('/pc_register', {
+    name: 'pc_register',
+    action: function(){
+        ReactLayout.render(PC, {
+            nav:<PcNav />,
+            content: <PcRegister />
         });
     }
 });
