@@ -19,7 +19,7 @@ FlowRouter.route("/", {
     name: 'home',
     action: function() {
         ReactLayout.render(PC, {
-            nav: <PcNav />,
+            nav: <PcNav username={Meteor.user()?Meteor.user().username:''} />,
             content: <PcIndex />
         });
     }

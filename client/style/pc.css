@@ -27,6 +27,10 @@ a:visited{
 .pc_nav span{
     display: inline-block;
     height: 50px; line-height: 50px;
+    float: left;
+}
+#gold_buy{
+    margin-left: 20px;
 }
 .pc_user_login{
     float: right;

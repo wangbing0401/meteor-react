@@ -4,6 +4,9 @@ Register = React.createClass({
             password = this.refs.form.userPassword.value;
         WB.createUser({username:name, password:password}, function(result){
             WB.dialog_show(result.message)
+            if(result.success){
+                FlowRouter.go('list');
+            }
         });
     },
     render:function(){
