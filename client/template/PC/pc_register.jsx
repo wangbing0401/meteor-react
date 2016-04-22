@@ -12,7 +12,7 @@ PcRegister = React.createClass({
     render: function(){
         return(
             <div style={styles.pc_login_center}>
-                <div style={styles.login_button}>登陆</div>
+                <div style={styles.login_button}>注册</div>
                 <div className="row" style={styles.pc_login_500}>
                     <form className="col s12" ref="form" >
                         <div className="row">
@@ -27,7 +27,7 @@ PcRegister = React.createClass({
                                 <label htmlFor="icon_telephone">密码</label>
                             </div>
                         </div>
-                        <a className="waves-effect waves-light btn-large" style={styles.large_button} onClick={this.register}>登陆</a>
+                        <a className="waves-effect waves-light btn-large" style={styles.large_button} onClick={this.register}>注册</a>
                     </form>
                 </div>
             </div>
