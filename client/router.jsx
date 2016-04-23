@@ -37,8 +37,17 @@ FlowRouter.route('/pc_register', {
     name: 'pc_register',
     action: function(){
         ReactLayout.render(PC, {
-            nav:<PcNav />,
+            nav: <PcNav />,
             content: <PcRegister />
+        });
+    }
+});
+pcadminRoutes.route("/gold_price", {
+    name: 'gold_price',
+    action: function(){
+        ReactLayout.render(PC, {
+            nav: <PcNav username={Meteor.user()?Meteor.user().username:''} />,
+            content: <PcGoldPrice />
         });
     }
 });

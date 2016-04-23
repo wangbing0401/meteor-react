@@ -17,6 +17,7 @@ a:visited{
     border: 0px;
     color: #333333;
     height: 50px;
+    z-index: 1001;
 }
 .pc_top .pc_nav{
     width: 85%;
