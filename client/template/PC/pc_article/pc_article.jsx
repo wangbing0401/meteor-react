@@ -55,6 +55,7 @@ PCarticle = React.createClass({
                             <option value="3">react</option>
                             <option value="4">meteor</option>
                             <option value="5">其它</option>
+                            <option value="6">node</option>
                         </select>
                     </div>
                 </div>

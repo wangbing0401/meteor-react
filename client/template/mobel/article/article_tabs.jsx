@@ -19,6 +19,7 @@ ArticleTabs = React.createClass({
                 <span className="tab" style={{textTransform:'none'}} onClick={this.top_tabs.bind(this, 3)} >react</span>
                 <span className="tab" style={{textTransform:'none'}} onClick={this.top_tabs.bind(this, 4)} >meteor</span>
                 <span className="tab" style={{textTransform:'none'}} onClick={this.top_tabs.bind(this, 5)} >其它</span>
+                <span className="tab" style={{textTransform:'none'}} onClick={this.top_tabs.bind(this, 6)} >node</span>
             </ul>
         )
     }

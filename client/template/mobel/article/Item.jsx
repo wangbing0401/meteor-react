@@ -20,6 +20,9 @@ Item = React.createClass({
             if(this.props.type == 4){
                 this.state.article_url = 'http://wb-category-logo.oss-cn-beijing.aliyuncs.com/meteor_icon.png';
             }
+            if(this.props.type == 6){
+                this.state.article_url = 'http://wb-category-logo.oss-cn-beijing.aliyuncs.com/node_icon.png';
+            }
         }
     },
     article_detail:function(articleId){
